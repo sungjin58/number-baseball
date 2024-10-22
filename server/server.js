@@ -23,7 +23,7 @@ const rooms = new Map();
 function generateNumber() {
   const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
   const result = [];
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {  // 3에서 4로 변경
     const index = Math.floor(Math.random() * numbers.length);
     result.push(numbers[index]);
     numbers.splice(index, 1);
@@ -34,7 +34,7 @@ function generateNumber() {
 function checkGuess(target, guess) {
   let strikes = 0;
   let balls = 0;
-  for (let i = 0; i < 3; i++) {
+  for (let i = 0; i < 4; i++) {  // 3에서 4로 변경
     if (target[i] === guess[i]) {
       strikes++;
     } else if (target.includes(guess[i])) {

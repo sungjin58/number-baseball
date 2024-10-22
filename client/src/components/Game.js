@@ -60,11 +60,11 @@ function Game() {
   };
 
   const submitGuess = () => {
-    if (guess.length === 3 && /^\d+$/.test(guess)) {
+    if (guess.length === 4 && /^\d+$/.test(guess)) {
       socket.emit('guess', { roomId, number: guess });
       setGuess('');
     } else {
-      setGameStatus('3자리 숫자를 입력해주세요.');
+      setGameStatus('4자리 숫자를 입력해주세요.');
     }
   };
 
@@ -73,7 +73,7 @@ function Game() {
       <div className="relative py-3 sm:max-w-xl sm:mx-auto">
         <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 to-blue-500 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
         <div className="relative px-4 py-10 bg-gray-700 shadow-lg sm:rounded-3xl sm:p-20">
-          <h1 className="text-4xl font-bold mb-8 text-center text-white">숫자 야구 게임</h1>
+          <h1 className="text-4xl font-bold mb-8 text-center text-white">숫자 야구 게임 (4자리)</h1>
           
           {!isGameStarted && (
             <div className="space-y-4">
@@ -98,8 +98,8 @@ function Game() {
                   type="text"
                   value={guess}
                   onChange={(e) => setGuess(e.target.value)}
-                  placeholder="3자리 숫자 입력"
-                  maxLength={3}
+                  placeholder="4자리 숫자 입력"
+                  maxLength={4}
                   className="w-2/3 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-cyan-500 bg-gray-600 text-white"
                 />
                 <button onClick={submitGuess} className="w-1/3 bg-green-500 text-white px-4 py-2 rounded-md hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-opacity-50">제출</button>
