@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io();
+const socket = io('https://number-baseball.onrender.com'); // Render URL로 변경
 
 function Game() {
   const [roomId, setRoomId] = useState('');

@@ -14,12 +14,12 @@ app.use(express.static(path.join(__dirname, '../client/build')));
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "http://localhost:3000",
+    origin: "https://your-frontend-url.netlify.app", // Netlify URL로 변경
     methods: ["GET", "POST"]
   }
 });
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 10000;
 
 const rooms = new Map();
 
