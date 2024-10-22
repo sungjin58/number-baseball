@@ -11,7 +11,7 @@ app.use(cors());
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: "https://67170dc22490122405c3e4ab--merry-tapioca-823a0b.netlify.app/", // Netlify URL로 변경
+    origin: "https://67170dc22490122405c3e4ab--merry-tapioca-823a0b.netlify.app", // Netlify URL로 변경
     methods: ["GET", "POST"]
   }
 });
